@@ -18,6 +18,7 @@ import Orders from './pages/Orders';
 import TrackOrder from './pages/TrackOrder';
 import Wishlist from './pages/Wishlist';
 import Profile from './pages/Profile';
+import SystemDiagrams from './pages/SystemDiagrams';
 import NotFound from './pages/NotFound';
 
 // Admin Pages
@@ -55,6 +56,7 @@ export default function App() {
           <Route path="/products/:id" element={<Products />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/diagrams" element={<SystemDiagrams />} />
 
           {/* Customer Protected */}
           <Route path="/checkout" element={<ProtectedRoute><Checkout /></ProtectedRoute>} />
