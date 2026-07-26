@@ -111,7 +111,7 @@ export default function Navbar() {
           {/* Location */}
           <button className="hidden lg:flex items-center gap-1 text-sm text-gray-600 dark:text-gray-300 hover:text-primary transition-colors shrink-0">
             <FiMapPin className="text-primary" size={15} />
-            <span className="font-medium">Khara, Punjab</span>
+            <span className="font-medium">Kharar, Punjab</span>
             <FiChevronDown size={14} />
           </button>
 

@@ -58,7 +58,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-start gap-3 text-gray-400">
                 <FiMapPin className="text-primary mt-0.5 shrink-0" size={16} />
-                <span>123 Fresh Avenue, Green Park, Mumbai, India - 400001</span>
+                <span>Phase 7, Industrial Area, Kharar, Punjab - 140301</span>
               </li>
               <li className="flex items-center gap-3 text-gray-400">
                 <FiPhone className="text-primary shrink-0" size={16} />

@@ -10,7 +10,7 @@ import { productAPI, categoryAPI } from '../services/api';
 import ProductCard from '../components/product/ProductCard';
 import ProductQuickView from '../components/product/ProductQuickView';
 
-const SlickSlider = Slider.default || Slider;
+const SlickSlider = typeof Slider === 'function' ? Slider : (Slider.default || Slider);
 
 const promoBanners = [
   { id: 1, title: '10 Minute Delivery', subtitle: 'Free Delivery on orders above ₹149!', bg: 'from-green-600 via-emerald-500 to-teal-600', badge: 'FASTEST DELIVERY', emoji: '', cta: 'Order Now', link: '/products' },
@@ -28,18 +28,18 @@ const discountDeals = [
 
 // Blinkit / Zepto-style categorical grid items
 const categoryGrid = [
-  { name: 'Vegetables', slug: 'vegetables', icon: 'Vg', color: 'bg-green-100 text-green-800 dark:bg-green-900/30 dark:text-green-300', tag: 'Fresh Harvest' },
-  { name: 'Fruits', slug: 'fruits', icon: 'Fr', color: 'bg-red-100 text-red-800 dark:bg-red-900/30 dark:text-red-300', tag: 'Sweet & Juicy' },
-  { name: 'Cold Drinks', slug: 'beverages', icon: 'Bv', color: 'bg-blue-100 text-blue-800 dark:bg-blue-900/30 dark:text-blue-300', tag: 'Chilled & Soft' },
-  { name: 'Bread & Bakery', slug: 'bakery', icon: 'Bk', color: 'bg-amber-100 text-amber-800 dark:bg-amber-900/30 dark:text-amber-300', tag: 'Baked Daily' },
-  { name: 'Snacks & Munchies', slug: 'snacks', icon: 'Sn', color: 'bg-orange-100 text-orange-800 dark:bg-orange-900/30 dark:text-orange-300', tag: 'Crispy & Tasty' },
-  { name: 'Dairy & Eggs', slug: 'dairy-eggs', icon: 'Dy', color: 'bg-indigo-100 text-indigo-800 dark:bg-indigo-900/30 dark:text-indigo-300', tag: 'Farm Fresh' },
-  { name: 'Toys & Games', slug: 'toys-games', icon: 'Tg', color: 'bg-pink-100 text-pink-800 dark:bg-pink-900/30 dark:text-pink-300', tag: 'Kids Special' },
-  { name: 'Baby Care', slug: 'baby-care', icon: 'Bc', color: 'bg-purple-100 text-purple-800 dark:bg-purple-900/30 dark:text-purple-300', tag: 'Gentle & Safe' },
-  { name: 'Grocery Essentials', slug: 'grocery', icon: 'Gr', color: 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900/30 dark:text-yellow-300', tag: 'Staples & Oils' },
-  { name: 'Household Cleaning', slug: 'household', icon: 'Hh', color: 'bg-teal-100 text-teal-800 dark:bg-teal-900/30 dark:text-teal-300', tag: 'Sparkling Clean' },
-  { name: 'Personal Care', slug: 'personal-care', icon: 'Pc', color: 'bg-rose-100 text-rose-800 dark:bg-rose-900/30 dark:text-rose-300', tag: 'Beauty & Hygiene' },
-  { name: 'Frozen & Ice Cream', slug: 'frozen', icon: 'Ic', color: 'bg-cyan-100 text-cyan-800 dark:bg-cyan-900/30 dark:text-cyan-300', tag: 'Ice Cold' },
+  { name: 'Vegetables', slug: 'vegetables', image: 'https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=200&h=200&fit=crop&auto=format', color: 'bg-green-100', tag: 'Fresh Harvest' },
+  { name: 'Fruits', slug: 'fruits', image: 'https://images.unsplash.com/photo-1619566636858-adf3ef46400b?w=200&h=200&fit=crop&auto=format', color: 'bg-red-100', tag: 'Sweet & Juicy' },
+  { name: 'Cold Drinks', slug: 'beverages', image: 'https://images.unsplash.com/photo-1527960471264-932f39eb5846?w=200&h=200&fit=crop&auto=format', color: 'bg-blue-100', tag: 'Chilled & Soft' },
+  { name: 'Bread & Bakery', slug: 'bakery', image: 'https://images.unsplash.com/photo-1509440159596-0249088772ff?w=200&h=200&fit=crop&auto=format', color: 'bg-amber-100', tag: 'Baked Daily' },
+  { name: 'Snacks & Munchies', slug: 'snacks', image: 'https://images.unsplash.com/photo-1599490659213-e2b9527bd087?w=200&h=200&fit=crop&auto=format', color: 'bg-orange-100', tag: 'Crispy & Tasty' },
+  { name: 'Dairy & Eggs', slug: 'dairy-eggs', image: 'https://images.unsplash.com/photo-1582722872445-44dc5f7e3c8f?w=200&h=200&fit=crop&auto=format', color: 'bg-indigo-100', tag: 'Farm Fresh' },
+  { name: 'Toys & Games', slug: 'toys-games', image: 'https://images.unsplash.com/photo-1558060370-d644479cb6f7?w=200&h=200&fit=crop&auto=format', color: 'bg-pink-100', tag: 'Kids Special' },
+  { name: 'Baby Care', slug: 'baby-care', image: 'https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=200&h=200&fit=crop&auto=format', color: 'bg-purple-100', tag: 'Gentle & Safe' },
+  { name: 'Grocery Essentials', slug: 'grocery', image: 'https://images.unsplash.com/photo-1542838132-92c53300491e?w=200&h=200&fit=crop&auto=format', color: 'bg-yellow-100', tag: 'Staples & Oils' },
+  { name: 'Household Cleaning', slug: 'household', image: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=200&h=200&fit=crop&auto=format', color: 'bg-teal-100', tag: 'Sparkling Clean' },
+  { name: 'Personal Care', slug: 'personal-care', image: 'https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=200&h=200&fit=crop&auto=format', color: 'bg-rose-100', tag: 'Beauty & Hygiene' },
+  { name: 'Frozen & Ice Cream', slug: 'frozen', image: 'https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=200&h=200&fit=crop&auto=format', color: 'bg-cyan-100', tag: 'Ice Cold' },
 ];
 
 const features = [
@@ -170,8 +170,14 @@ export default function Home() {
                 to={`/products?category=${cat.slug}`}
                 className="flex flex-col items-center p-4 rounded-3xl bg-white dark:bg-dark-card border border-gray-100 dark:border-dark-border hover:border-primary hover:shadow-card-hover transition-all text-center group relative overflow-hidden"
               >
-                <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-3xl mb-2.5 transition-transform group-hover:scale-110 shadow-sm ${cat.color}`}>
-                  {cat.icon}
+                <div className={`w-16 h-16 rounded-2xl overflow-hidden mb-2.5 transition-transform group-hover:scale-110 shadow-sm ring-2 ring-white dark:ring-dark-border ${cat.color}`}>
+                  <img
+                    src={cat.image}
+                    alt={cat.name}
+                    className="w-full h-full object-cover"
+                    loading="lazy"
+                    onError={(e) => { e.target.style.display = 'none'; }}
+                  />
                 </div>
                 <span className="font-bold text-sm text-gray-900 dark:text-white group-hover:text-primary transition-colors leading-tight mb-1">
                   {cat.name}

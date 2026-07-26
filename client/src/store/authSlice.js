@@ -1,6 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const user = JSON.parse(localStorage.getItem('fm_user') || 'null');
+const getUserFromStorage = () => {
+  try {
+    const item = localStorage.getItem('fm_user');
+    return item && item !== 'undefined' ? JSON.parse(item) : null;
+  } catch {
+    return null;
+  }
+};
+const user = getUserFromStorage();
 const token = localStorage.getItem('fm_token') || null;
 
 const authSlice = createSlice({

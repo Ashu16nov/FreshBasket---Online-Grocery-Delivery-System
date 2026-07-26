@@ -13,7 +13,26 @@ const getProducts = async (req, res, next) => {
     } = req.query;
 
     const where = { is_active: true };
-    if (category) where.category_id = category;
+    if (category) {
+      if (!isNaN(category)) {
+        where.category_id = parseInt(category);
+      } else {
+        const catObj = await Category.findOne({
+          where: {
+            [Op.or]: [
+              { slug: category },
+              { slug: { [Op.like]: `%${category}%` } },
+              { name: { [Op.like]: `%${category}%` } },
+            ],
+          },
+        });
+        if (catObj) {
+          where.category_id = catObj.id;
+        } else {
+          where.category_id = -1; // return empty if category not found
+        }
+      }
+    }
     if (brand) where.brand = { [Op.like]: `%${brand}%` };
     if (minPrice || maxPrice) where.price = { [Op.between]: [minPrice || 0, maxPrice || 99999] };
     if (minRating) where.rating_avg = { [Op.gte]: minRating };

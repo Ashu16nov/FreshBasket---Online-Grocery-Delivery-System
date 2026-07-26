@@ -40,6 +40,19 @@ export default function Products() {
     search: searchParams.get('search') || '',
   });
 
+  // Re-sync filters whenever the URL search params change (e.g. navigating from category cards)
+  useEffect(() => {
+    setFilters(prev => ({
+      ...prev,
+      category: searchParams.get('category') || '',
+      featured: searchParams.get('featured') || '',
+      flash_sale: searchParams.get('flash_sale') || '',
+      organic: searchParams.get('organic') || '',
+      search: searchParams.get('search') || '',
+    }));
+    setPage(1);
+  }, [searchParams]);
+
   const [sortField, sortOrder] = sort.split('-');
 
   const { data: catData } = useQuery({ queryKey: ['categories'], queryFn: () => categoryAPI.getAll().then(r => r.data.data) });
@@ -73,8 +86,12 @@ export default function Products() {
       {/* Page header */}
       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
         <div>
-          <h1 className="text-2xl font-bold dark:text-white">
-            {filters.search ? `Results for "${filters.search}"` : filters.category ? `${filters.category.replace(/-/g, ' ')}` : 'All Products'}
+          <h1 className="text-2xl font-bold dark:text-white capitalize">
+            {filters.search
+              ? `Results for "${filters.search}"`
+              : filters.category
+              ? filters.category.replace(/-/g, ' & ').replace(/\b\w/g, c => c.toUpperCase())
+              : 'All Products'}
           </h1>
           <p className="text-gray-500 dark:text-gray-400 text-sm">{pagination.total || 0} products found</p>
         </div>
