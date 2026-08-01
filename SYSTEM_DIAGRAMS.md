@@ -2,8 +2,6 @@
 
 This document presents the complete **Data Flow Diagrams (DFD)** and **Entity-Relationship (ER) Diagram** for **FreshBasket - Online Grocery Delivery System**.
 
----
-
 ## 1. Entity-Relationship (ER) Diagram
 
 The ER diagram illustrates the database design and logical relationships between entities in the MySQL database schema.
