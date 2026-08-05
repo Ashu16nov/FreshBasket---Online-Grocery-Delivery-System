@@ -2,7 +2,7 @@
 
 FreshBasket is an enterprise-grade, full-stack grocery e-commerce web application inspired by **Blinkit, Zepto, BigBasket, and Swiggy Instamart**. It features a ultra-clean, modern UI with dark mode support, glassmorphic elements, instant search, animated product cards, cart drawer, checkout stepper, real-time order tracking, PDF invoice generation, and an extensive Admin Dashboard.
 
-### Tech Stack
+### ------ Tech Stack -------
 
 ### Frontend
 - **Framework**: React.js 18 (Vite)
@@ -38,7 +38,7 @@ FreshBasket is an enterprise-grade, full-stack grocery e-commerce web applicatio
 13. `notifications` — Order & promotion alerts
 14. `invoices` — Tax invoices with GST numbers
 
-### Getting Started
+### --------Getting Started-----------
 
 ### 1. Database Setup
 Create a MySQL database named `freshmart_db`:
