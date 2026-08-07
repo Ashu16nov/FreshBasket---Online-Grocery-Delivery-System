@@ -1,20 +1,20 @@
-# Dependencies
+# Dependencies ---------------------------------
 node_modules/
 **/node_modules/
 
-# Environment variables
+# Environment variables ---------------------------
 .env
 .env.local
 .env.*.local
 !*.env.example
 
-# Build & Output
+# Build & Output ------------------------------
 dist/
 dist-ssr/
 build/
 *.tsbuildinfo
 
-# Logs
+# Logs ---------------------------
 logs/
 *.log
 npm-debug.log*
@@ -22,12 +22,12 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# IDE / OS
+# IDE / OS ------------------------------
 .vscode/
 .idea/
 .DS_Store
 Thumbs.db
 
-# Temporary / Uploads
+# Temporary / Uploads --------------------------------
 uploads/*
 !uploads/.gitkeep
