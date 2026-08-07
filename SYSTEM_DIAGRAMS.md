@@ -2,7 +2,7 @@
 
 This document presents the complete **Data Flow Diagrams (DFD)** and **Entity-Relationship (ER) Diagram** for **FreshBasket - Online Grocery Delivery System**.
 
-## 1. Entity-Relationship (ER) Diagram
+## 1. Entity-Relationship (ER) Diagram --------------------------------------------------------------------------------------------------------------------------
 The ER diagram illustrates the database design and logical relationships between entities in the MySQL database schema.
 
 ```mermaid
@@ -183,12 +183,12 @@ erDiagram
 
 ---
 
-## 2. Data Flow Diagram (DFD)
+## 2. Data Flow Diagram (DFD) -----------------------------------------------------------------------------------------------------------------------------------
 Data Flow Diagrams visualize how information flows through the system, identifying external entities, main processes, data stores, and data movements.
 
 ---
 
-### 2.1 DFD Level 0 (Context Diagram)
+### 2.1 DFD Level 0 (Context Diagram) ----------------------------------------------------------------------------------------------------------------------------
 The Level 0 Context Diagram represents the overall FreshBasket system boundary and its interactions with external entities.
 
 ```mermaid
@@ -221,7 +221,7 @@ graph TD
 
 ---
 
-### 2.2 DFD Level 1 (Major System Processes)
+### 2.2 DFD Level 1 (Major System Processes) ------------------------------------------------------------------------------------------------------------
 The Level 1 DFD decomposes the system into major operational modules and identifies data stores (D1–D6).
 
 ```mermaid
@@ -288,7 +288,7 @@ graph TD
 
 ---
 
-### 2.3 DFD Level 2 (Detailed Checkout & Order Processing Subsystem)
+### 2.3 DFD Level 2 (Detailed Checkout & Order Processing Subsystem) -------------------------------
 The Level 2 DFD zooms into the core **Checkout & Order Processing** sub-process (Process 4.0).
 
 ```mermaid
@@ -326,7 +326,7 @@ graph TD
 
 ---
 
-## 3. Summary of Key Entities & Data Flows
+## 3. Summary of Key Entities & Data Flows -----------------------------------
 
 | Component | Type | Primary Role |
 | :--- | :--- | :--- |
