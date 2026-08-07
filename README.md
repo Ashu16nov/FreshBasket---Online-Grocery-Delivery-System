@@ -2,9 +2,10 @@
 
 FreshBasket is an enterprise-grade, full-stack grocery e-commerce web application inspired by **Blinkit, Zepto, BigBasket, and Swiggy Instamart**. It features a ultra-clean, modern UI with dark mode support, glassmorphic elements, instant search, animated product cards, cart drawer, checkout stepper, real-time order tracking, PDF invoice generation, and an extensive Admin Dashboard.
 
+
 ### ------ Tech Stack -------
 
-### Frontend
+### Frontend ---------------------
 - **Framework**: React.js 18 (Vite)
 - **State Management**: Redux Toolkit + React Query (`@tanstack/react-query`)
 - **Styling**: Tailwind CSS v3 + Custom Design Tokens (Poppins font, `#16A34A` Green theme)
@@ -13,7 +14,7 @@ FreshBasket is an enterprise-grade, full-stack grocery e-commerce web applicatio
 - **Icons & Alerts**: React Icons, SweetAlert2, React Hot Toast
 - **Charts & PDF**: Recharts, jsPDF + html2canvas
 
-### Backend & Database
+### Backend & Database --------------------
 - **Runtime**: Node.js & Express.js
 - **Database**: MySQL (Relational Schema)
 - **ORM**: Sequelize ORM
@@ -21,7 +22,7 @@ FreshBasket is an enterprise-grade, full-stack grocery e-commerce web applicatio
 - **Security**: bcryptjs (Password Hashing), Helmet, CORS, Express Rate Limit, Parameterized SQL queries
 - **File Uploads**: Multer (Local storage / Cloudinary ready)
 
-### MySQL Database Schema (16 Tables)
+### MySQL Database Schema (16 Tables) -------------------
 
 1. `users` — Customer, Admin, and Delivery roles, loyalty points, wallet balance
 2. `categories` — Grocery categories with custom icons, colors, and order
@@ -40,13 +41,13 @@ FreshBasket is an enterprise-grade, full-stack grocery e-commerce web applicatio
 
 ### --------Getting Started-----------
 
-### 1. Database Setup
+### 1. Database Setup -------------------
 Create a MySQL database named `freshmart_db`:
 ```sql
 CREATE DATABASE freshmart_db;
 ```
 
-### 2. Backend Setup
+### 2. Backend Setup ---------------------
 ```bash
 cd server
 npm install
@@ -66,7 +67,7 @@ npm run dev
 
 Server runs at `http://localhost:5000`.
 
-### 3. Frontend Setup
+### 3. Frontend Setup ---------------------
 ```bash
 cd client
 npm install
@@ -77,7 +78,7 @@ Client runs at `http://localhost:5173`.
 
 ---
 
-### Demo Credentials
+### Demo Credentials -----------------------
 
 | Role | Email | Password |
 |---|---|---|
@@ -86,7 +87,7 @@ Client runs at `http://localhost:5173`.
 
 ---
 
-## Features Highlights
+## Features Highlights ----------------------
 
 - ⚡ **10-Minute Delivery UI**: Blazing fast instant search & location selector
 - 🛒 **Interactive Cart Drawer**: Real-time total calculation & coupon application
